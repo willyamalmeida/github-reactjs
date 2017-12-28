@@ -1,4 +1,4 @@
-var react = require('react');
-var reactDom = require('react-dom');
+var React = require('react');
+var ReactDom = require('react-dom');
 
-reactDom.render(<h1>Meu Github</h1>, document.getElementById('app'));
+ReactDom.render(<h1>Meu Github</h1>, document.getElementById('app'));
