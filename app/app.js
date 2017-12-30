@@ -1,4 +1,5 @@
-var React = require('react');
-var ReactDom = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import GitHub from './components/github';
 
-ReactDom.render(<h1>Meu Github</h1>, document.getElementById('app'));
+ReactDOM.render(<GitHub />, document.getElementById('app'));
