@@ -1,26 +1,18 @@
-module.exports = {
-    entry: "./app/app.js",
-    
-    output: {
-      filename: "./bundle.js"
-    },
-    
-    devServer:{
-      inline: true,
-      contentBase: './',
-      port: 3333
-    },
+var devConfig = require('./webpack.dev.config.js');
+var prodConfig = require('./webpack.prod.config.js');
 
-    module: {
-      loaders: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader',
-          query: {
-            presets: ['react', 'es2015']
-          }
-        }
-      ]
-    }
-  }
+var config;
+
+switch (process.env.npm_lifecycle_event) {
+  case 'start':
+    config = devConfig;
+    break;
+  case 'build':
+    config = prodConfig;
+    break;
+  default:
+    config = devConfig;
+    break;
+}
+
+module.exports = config;

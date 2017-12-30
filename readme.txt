@@ -14,11 +14,10 @@ npm install --save-dev babel-core babel-loader babel-preset-react
 npm install webpack -g
 
 #6.0: configurando um servidor hot reload
-npm install webpack-dev-server
 npm install --save-dev webpack-dev-server
 
 #6.1 para rodar o servidor
-webpack-dev-server
+npm start
 
 #7.0 instalando ec6
 npm install --save-dev babel-preset-es2015
