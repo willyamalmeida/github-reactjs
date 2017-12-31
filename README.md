@@ -3,8 +3,8 @@ API do GitHub.
 
 # Build Status and VSTS
 <span>
-    <img src="https://willyamalmeida.visualstudio.com/_apis/public/build/definitions/b338f7d5-bec3-4069-a268-6a4e428a914e/4/badge" />
-    <a href="https://willyamalmeida.visualstudio.com/Github/_build/index?definitionId=4">
+    <img src="https://willyamalmeida.visualstudio.com/_apis/public/build/definitions/b338f7d5-bec3-4069-a268-6a4e428a914e/6/badge" />
+    <a href="https://willyamalmeida.visualstudio.com/Github/_build/index?definitionId=6">
         Build
     </a>
 </span>
