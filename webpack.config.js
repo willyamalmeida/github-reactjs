@@ -20,7 +20,12 @@ config.devServer = {
   hot: true,
   compress: true,
   contentBase: './',
-  port: 8080
+  port: 8080,
+  stats: { colors: true },
+  headers: { "Content-Type'": "text/html" },
+  allowedHosts: [
+    'github-reactjs.azurewebsites.net/'
+  ]
 };
 
 module.exports = config;

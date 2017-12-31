@@ -2,38 +2,31 @@
   "name": "github-reactjs",
   "version": "2.0.0",
   "description": "Api Github com reactjs",
-  "main": "webpack.config.js",
-  "engines": {
-    "node": "~0.10.0 || ~4.2.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/willyamalmeida/github-reactjs.git"
-  },
   "author": "Willyam Almeida",
   "license": "Apache",
   "private": true,
-  "bugs": {
-    "url": "https://github.com/willyamalmeida/github-reactjs/issues"
+
+  "engines": {
+    "node": "~0.10.0 || ~4.2.0"
   },
-  "homepage": "https://github.com/willyamalmeida/github-reactjs#readme",
+
+  "scripts": {
+    "start": "node server"
+  },
+
   "dependencies": {
     "axios": "^0.17.1",
     "file-system": "^2.2.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
+
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "html-webpack-plugin": "^2.30.1",
-    "nodemon": "^1.14.6",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   }
