@@ -1,32 +1,25 @@
-var devConfig = require('./webpack.dev.config.js');
-var prodConfig = require('./webpack.prod.config.js');
 
-var config;
-
-switch (process.env.npm_lifecycle_event) {
-  case 'start':
-    config = devConfig;
-    break;
-  case 'build':
-    config = prodConfig;
-    break;
-  default:
-    config = devConfig;
-    break;
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').load();
 }
+
+console.log('Ambiente: ' + process.env.NODE_ENV);
+console.log('Webpack: ' + process.env.NODE_WEBPACK_CONFIG);
+
+var config = require(process.env.NODE_WEBPACK_CONFIG); 
     
 config.devServer = {
   inline: true,
   hot: true,
+  host: "0.0.0.0",
   disableHostCheck: true,
   compress: true,
   contentBase: './',
   port: 8080,
-  stats: { colors: true },
-  headers: { "Content-Type'": "text/html" },
-  allowedHosts: [
-    'github-reactjs.azurewebsites.net'
-  ]
+  stats: { 
+    colors: true,
+    reasons: true
+  }
 };
 
 module.exports = config;

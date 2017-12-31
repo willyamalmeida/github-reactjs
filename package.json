@@ -5,22 +5,19 @@
   "author": "Willyam Almeida",
   "license": "Apache",
   "private": true,
-
   "engines": {
     "node": "~0.10.0 || ~4.2.0"
   },
-
   "scripts": {
     "start": "node server"
   },
-
   "dependencies": {
     "axios": "^0.17.1",
+    "dotenv": "^4.0.0",
     "file-system": "^2.2.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
-
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
