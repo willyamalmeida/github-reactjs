@@ -3,9 +3,8 @@ API do GitHub.
 
 # Build and Test
 1.Integrado com VSTS
-[<img src="https://willyamalmeida.visualstudio.com/_apis/public/build/definitions/b338f7d5-bec3-4069-a268-6a4e428a914e/4/badge" />]
+<img src="https://willyamalmeida.visualstudio.com/_apis/public/build/definitions/b338f7d5-bec3-4069-a268-6a4e428a914e/4/badge" />
 (https://willyamalmeida.visualstudio.com/Github/_build/index?definitionId=4)
-
 
 # Getting Started
 1.0: inicializar aplicação e criar package json
