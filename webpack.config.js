@@ -18,13 +18,14 @@ switch (process.env.npm_lifecycle_event) {
 config.devServer = {
   inline: true,
   hot: true,
+  disableHostCheck: true,
   compress: true,
   contentBase: './',
   port: 8080,
   stats: { colors: true },
   headers: { "Content-Type'": "text/html" },
   allowedHosts: [
-    'github-reactjs.azurewebsites.net/'
+    'github-reactjs.azurewebsites.net'
   ]
 };
 
