@@ -8,12 +8,8 @@ module.exports = {
     output: {
       filename: "./bundle.js"
     },
-    
-    devServer:{
-      inline: true,
-      contentBase: './'
-      //port: 3333
-    },
+
+    devServer: {},
 
     module: {
       loaders: [

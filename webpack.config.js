@@ -14,5 +14,13 @@ switch (process.env.npm_lifecycle_event) {
     config = devConfig;
     break;
 }
+    
+config.devServer = {
+  inline: true,
+  hot: true,
+  compress: true,
+  contentBase: './',
+  port: 8080
+};
 
 module.exports = config;
