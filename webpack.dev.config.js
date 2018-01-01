@@ -9,8 +9,6 @@ module.exports = {
     filename: "./bundle.js"
   },
 
-  devServer: {},
-
   devtool: "sourcemap",
 
   module: {

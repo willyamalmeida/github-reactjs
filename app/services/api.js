@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-var api = {
+const api = {
     getUser: function(user) {
         return Axios.get('https://api.github.com/users/' + user);
     },

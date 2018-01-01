@@ -1,30 +1,20 @@
 
-const WebpackDevServer = require('webpack-dev-server');
-//const WebpackDevMiddleware = require('webpack-dev-middleware');
-const config = require('./webpack.config');
-const webpack = require('webpack');
-// const express = require('express');
+const ehAmbienteDeProducao = process.env.NODE_ENV === 'production';
 
-// const app = express();
+ if (!ehAmbienteDeProducao) {
+    require('dotenv').load();
+ }
+
+console.log('Ambiente: ' + process.env.NODE_ENV);
+
+const WebpackDevServer = require('webpack-dev-server');
+const config = require('./webpack.config');
+
+const webpack = require('webpack');
 const compiler = webpack(config);
 
-// if (process.env.NODE_ENV === 'production') {
-//     let appInsights = require('applicationinsights');
+const appInsights = require('./appInsights');
+appInsights.init(ehAmbienteDeProducao, config);
 
-//     appInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY).start();
-//     let aiClient = appInsights.defaultClient;
+new WebpackDevServer(compiler, config.devServer).listen(process.env.PORT || 8080);
 
-//     app.use(function (req, res, next) {
-//         aiClient.trackRequest(req, res);
-//         next();
-//     });
-
-//     app.use(function (err, req, res, next) {
-//         aiClient.trackException(err);
-//     });
-// }
-
-// const webpackMiddleware = WebpackDevMiddleware(compiler, config.devServer);
-// app.listen(8080, webpackMiddleware.listen);
-
-new WebpackDevServer(webpack(config), config.devServer).listen(process.env.PORT || 8080);

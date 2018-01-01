@@ -1,12 +1,7 @@
 
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').load();
-}
-
-console.log('Ambiente: ' + process.env.NODE_ENV);
-console.log('Webpack: ' + process.env.NODE_WEBPACK_CONFIG);
-
-var config = require(process.env.NODE_WEBPACK_CONFIG); 
+const config = process.env.NODE_ENV === 'production'
+  ? require('./webpack.prod.config.js')
+  : require('./webpack.dev.config.js'); 
     
 config.devServer = {
   inline: true,

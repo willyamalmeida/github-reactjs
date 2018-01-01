@@ -23,8 +23,6 @@ module.exports = {
         chunkFilename: '[chunkhash].bundle.js',
     },
     
-    devServer: {},
-
     module: {
       loaders: [
         {
