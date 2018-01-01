@@ -12,6 +12,7 @@
     "start": "node server"
   },
   "dependencies": {
+    "applicationinsights": "^1.0.1",
     "axios": "^0.17.1",
     "dotenv": "^4.0.0",
     "file-system": "^2.2.2",

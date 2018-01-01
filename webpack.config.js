@@ -18,7 +18,9 @@ config.devServer = {
   port: 8080,
   stats: { 
     colors: true,
-    reasons: true
+    reasons: true,
+    modules: true,
+    errorDetails: true
   }
 };
 

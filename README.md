@@ -49,4 +49,7 @@ npm install --save-dev html-webpack-plugin
 11. configurando variavel de ambiente
 npm install dotenv --save 
 
+12. instalando application insights
+npm install applicationinsights --save
+
 # Contribute
