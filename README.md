@@ -1,5 +1,5 @@
 # Introduction 
-API do GitHub.
+API GitHub
 
 # Build Status and VSTS
 <span>
@@ -10,46 +10,35 @@ API do GitHub.
 </span>
 
 # Getting Started
-1. inicializar aplicação e criar package json
-npm init
 
-2. instalar react e react-dom
-npm install --save react react-dom
+**Local**
 
-3. criar setup com webpack
-npm install --save-dev webpack
+1. Install dependencies
+npm install
 
-4. instalar o babel para webpack funcionar
-npm install --save-dev babel-core babel-loader babel-preset-react
-
-5. instalar webpack global
-npm install webpack -g
-
-6. configurando um servidor hot reload
-npm install --save-dev webpack-dev-server
-
-**6.1** para rodar o servidor
+2. Install application
 npm start
 
-7. instalando ec6
-npm install --save-dev babel-preset-es2015
 
-8. executa webpack para geração do arquivo bundle.js definido no arquivo de configuração webpack.config.js
-webpack
+**Docker**
+1. Create docker image
+docker build -t img-github-reactjs .
 
-**8.1.** para ficar ouvindo alterações para geração automatica
-webpack -w
+2. Execute container
+docker run -p 3000:8080 -d img-github-reactjs
+***Exemple***
+http://localhost:3000
 
-9. instalando axios
-npm install --save axios
+3. Stop and remove container
+***Get id container***
+docker ps -a
+***Stop container***
+docker stop {id-container}
+***Remove container***
+docker rm {id-container}
 
-10. inserindo blunder.js automatico na index.html
-npm install --save-dev html-webpack-plugin
-
-11. configurando variavel de ambiente
-npm install dotenv --save 
-
-12. instalando application insights
-npm install applicationinsights --save
+4. Remove image
+docker rmi img-github-reactjs
 
 # Contribute
+**Willyam Almeida**

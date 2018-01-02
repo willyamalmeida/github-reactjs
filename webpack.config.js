@@ -1,8 +1,8 @@
 
 const config = process.env.NODE_ENV === 'production'
   ? require('./webpack.prod.config.js')
-  : require('./webpack.dev.config.js'); 
-    
+  : require('./webpack.dev.config.js');
+
 config.devServer = {
   inline: true,
   hot: true,
@@ -11,7 +11,7 @@ config.devServer = {
   compress: true,
   contentBase: './',
   port: 8080,
-  stats: { 
+  stats: {
     colors: true,
     reasons: true,
     modules: true,
