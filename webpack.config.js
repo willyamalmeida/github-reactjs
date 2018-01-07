@@ -1,7 +1,11 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = process.env.NODE_ENV === 'production'
   ? require('./webpack.prod.config.js')
   : require('./webpack.dev.config.js');
+
+const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({ template: './src/index.html' });
+config.plugins.push(HTMLWebpackPluginConfig);
 
 config.module = {
   loaders: [

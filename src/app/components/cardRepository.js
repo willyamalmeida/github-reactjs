@@ -9,7 +9,7 @@ class CardRepository extends React.Component {
 
     render() {
         return (
-            <div className="card border-secondary mt-3">
+            <div className="card mt-3">
                 <div className="card-body">
                     <h6 className="card-subtitle">
                         <a className="card-link"

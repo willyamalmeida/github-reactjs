@@ -1,14 +1,13 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({ template: 'index.html' });
+const path = require('path');
 
 const config = {
-  entry: "./app/app.js",
+  entry: "./src/app/app.js",
   output: {
-    filename: "./bundle.js"
+    path: path.resolve(__dirname, 'dist'),
+    filename: "bundle.js"
   },
   devtool: "sourcemap",
-  plugins: [HTMLWebpackPluginConfig]
+  plugins: []
 };
 
 module.exports = config;

@@ -15,6 +15,10 @@ class SearchUser extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
+    componentDidMount() {
+        this.inputUsername.focus();
+    }
+
     handleUsernameChange(e) {
         this.setState({ username: e.target.value });
     }
@@ -45,6 +49,7 @@ class SearchUser extends React.Component {
                 <input
                     type="text"
                     value={this.state.username}
+                    ref={(input) => { this.inputUsername = input; }}
                     className="form-control"
                     id="inputGroupAddon"
                     aria-describedby="btnGroupAddon"
