@@ -14,7 +14,7 @@ const CommonChunksPlugin = new Webpack.optimize.CommonsChunkPlugin({ names: ['ve
 const config = {
     entry: {
         vendor: ['react', 'react-dom'],
-        app: "./src/app/app.js"
+        app: './src/app/app.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

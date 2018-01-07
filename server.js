@@ -1,8 +1,10 @@
+// process.env.NODE_ENV = 'production'
 
-const ehAmbienteDeProducao = process.env.NODE_ENV === 'production';
+process.env.EH_AMBIENTE_DE_PRODUCAO = process.env.NODE_ENV === 'production';
 
- if (!ehAmbienteDeProducao) {
+ if (!process.env.EH_AMBIENTE_DE_PRODUCAO) {
     require('dotenv').load();
+    console.log('dotenv load...');
  }
 
 console.log('Ambiente: ' + process.env.NODE_ENV);
@@ -14,7 +16,7 @@ const appInsights = require('./appInsights');
 
 const compiler = webpack(config);
 
-appInsights.init(ehAmbienteDeProducao, config);
+appInsights.init(config);
 
 const server = new WebpackDevServer(compiler, config.devServer);
 

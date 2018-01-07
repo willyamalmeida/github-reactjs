@@ -1,8 +1,8 @@
 
 const appInsights = {
 
-    init: function (ehAmbienteDeProducao, config) {
-        if (ehAmbienteDeProducao) {
+    init: function (config) {
+        if (process.env.EH_AMBIENTE_DE_PRODUCAO) {
 
             const apiInsights = require('applicationinsights');
 

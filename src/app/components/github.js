@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import SearchUser from './searchUser';
 import UserInfo from './userInfo';
+import styles from './github.css';
 
 class GitHub extends React.Component {
     constructor(props) {
@@ -24,16 +25,6 @@ class GitHub extends React.Component {
     }
 
     render() {
-        // const footerStyles = StyleSheet.create({
-        //     footer: {
-        //         bottom: 0,
-        //         width: 100%,
-        //         height: 60px,
-        //         line-height: 60px,
-        //         background-color: '#f5f5f5'
-        //     };
-        // });
-
         return (
 
             <React.Fragment>
