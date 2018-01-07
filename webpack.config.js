@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const path = require('path');
 
 const config = process.env.EH_AMBIENTE_DE_PRODUCAO
   ? require('./webpack.prod.config.js')
@@ -57,7 +56,11 @@ config.module = {
     {
       test: /\.png$/,
       loader: 'file-loader'
-    }
+    },
+    {
+      test: /\.jpg$/,
+      loader: 'file-loader'
+    } 
   ]
 };
 

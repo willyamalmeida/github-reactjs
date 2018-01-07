@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import SearchUser from './searchUser';
 import UserInfo from './userInfo';
-import styles from './github.css';
+import './github.min.css';
 
 class GitHub extends React.Component {
     constructor(props) {

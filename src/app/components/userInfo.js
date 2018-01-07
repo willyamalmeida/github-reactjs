@@ -11,7 +11,11 @@ class UserInfo extends React.Component {
 
     render() {
         let userInfo = this.props.user === null
-            ? null
+            ? ( 
+                <div>
+                    <h2>Welcome API GitHub</h2>
+                </div>
+            )
             : (
                 <div className="row">
                     <div className="col-lg-3">
