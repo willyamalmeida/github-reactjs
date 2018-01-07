@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Api from '../services/api';
 
@@ -12,45 +12,55 @@ class SearchUser extends React.Component {
 
         this.handleUsernameChange = this.handleUsernameChange.bind(this);
         this.handleUsernameKeyPress = this.handleUsernameKeyPress.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleUsernameChange(e){
-        this.setState({username : e.target.value});
+    handleUsernameChange(e) {
+        this.setState({ username: e.target.value });
     }
 
     handleUsernameKeyPress(e) {
-        if (e.key === 'Enter'){
-            this.handleSubmit(e);
+        if (e.key === 'Enter') {
+            this.handleClick(e);
         }
     }
 
-    handleSubmit(e) {
+    handleClick(e) {
         let self = this;
-        
-        Api.getUser(this.state.username).then(function (response) {
+
+        Api.getUser(this.state.username).then(response => {
             self.props.updateUser(response.data);
         });
 
-        Api.getRepos(this.state.username).then(function (response) {
-            self.props.updateRepositorys(response.data);
+        Api.getRepos(this.state.username).then(response => {
+            self.props.updateRepository(response.data);
         });
+
+        this.setState({ username: '' });
     }
 
     render() {
         return (
-            <div className="row" >
-                <div className="form-group">
-                    <label>User</label>
-                    <input
-                        type="text"
-                        value={this.state.username}
-                        className="form-control"
-                        placeholder="Search Users"
-                        onChange={this.handleUsernameChange}
-                        onKeyPress={this.handleUsernameKeyPress} />
+            <div className="input-group">
+                <input
+                    type="text"
+                    value={this.state.username}
+                    className="form-control"
+                    id="inputGroupAddon"
+                    aria-describedby="btnGroupAddon"
+                    placeholder="Search users"
+                    onChange={this.handleUsernameChange}
+                    onKeyPress={this.handleUsernameKeyPress} />
+
+                <div className="input-group-append">
+                    <button
+                        type="button"
+                        className="btn btn-secondary"
+                        id="inputGroupAddon"
+                        onClick={this.handleClick}>
+                        Search
+                </button>
                 </div>
-                <button type="button" className="btn btn-primary" onClick={this.handleSubmit}>Buscar</button>
             </div>
         );
     }
@@ -58,7 +68,7 @@ class SearchUser extends React.Component {
 
 SearchUser.propTypes = {
     updateUser: PropTypes.func.isRequired,
-    updateRepositorys: PropTypes.func.isRequired
+    updateRepository: PropTypes.func.isRequired
 };
 
 export default SearchUser;

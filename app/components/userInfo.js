@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import UserDetails from './userDetails';
+import CardUser from './cardUser';
 import UserRepository from './userRepository';
 
 class UserInfo extends React.Component {
@@ -14,11 +14,11 @@ class UserInfo extends React.Component {
             ? null
             : (
                 <div className="row">
-                    <div className="col-lg-4">
-                        <UserDetails user={this.props.user} />
+                    <div className="col-lg-3">
+                        <CardUser user={this.props.user} />
                     </div>
-                    <div className="col-lg-8">
-                        <UserRepository repositorysUser={this.props.repositorysUser} />
+                    <div className="col">
+                        <UserRepository repositories={this.props.repositories} />
                     </div>
                 </div>
             );
@@ -29,7 +29,7 @@ class UserInfo extends React.Component {
 
 UserInfo.propsType = {
     user: PropTypes.object,
-    repositorysUser: PropTypes.array
+    repositories: PropTypes.array
 };
 
 export default UserInfo;

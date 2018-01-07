@@ -7,14 +7,18 @@ const ehAmbienteDeProducao = process.env.NODE_ENV === 'production';
 
 console.log('Ambiente: ' + process.env.NODE_ENV);
 
-const WebpackDevServer = require('webpack-dev-server');
+const WebpackDevServer = require( 'webpack-dev-server');
 const config = require('./webpack.config');
-
 const webpack = require('webpack');
+const appInsights = require('./appInsights');
+
 const compiler = webpack(config);
 
-const appInsights = require('./appInsights');
 appInsights.init(ehAmbienteDeProducao, config);
 
-new WebpackDevServer(compiler, config.devServer).listen(process.env.PORT || 8080);
+const server = new WebpackDevServer(compiler, config.devServer);
+
+server.listen(process.env.PORT || 8080, function() {
+    console.log('Servidor inicializado: http://localhost:8080');
+});
 

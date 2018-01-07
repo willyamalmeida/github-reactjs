@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CardRepository from './cardRepository';
 
 class UserRepository extends React.Component {
     constructor(props) {
@@ -7,32 +8,22 @@ class UserRepository extends React.Component {
     }
 
     render() {
-        let repositorys = this.props.repositorysUser === undefined
-            ? null   
-            : this.props.repositorysUser.map(function (repo, key) {
-            return (
-                <div key={key} className="thumbnail">
-                    <div className="caption">
-                        <h3>
-                            {repo.name}
-                            <span className="badge">{repo.stargazers_count} STARS</span>
-                        </h3>
-                        <p>{repo.description}</p>
-                        <p>
-                            <a href={repo.html_url} className="btn btn-primary" role="button">Repository</a>
-                            <a href={repo.html_url + '/issues'} className="btn btn-default" role="button">Issues ({repo.open_issues}) </a>
-                        </p>
+        let repositorys = this.props.repositories === undefined
+            ? null
+            : this.props.repositories.map(function (repo, key) {
+                return (
+                    <div key={key}>
+                        <CardRepository repository={repo} />
                     </div>
-                </div>
-            );
-        });
+                );
+            });
 
         return repositorys;
     }
 }
 
 UserRepository.propTypes = {
-    repositorysUser: PropTypes.array
+    repositories: PropTypes.array
 };
 
 export default UserRepository;
