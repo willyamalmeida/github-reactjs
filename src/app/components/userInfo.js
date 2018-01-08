@@ -13,7 +13,7 @@ class UserInfo extends React.Component {
         let userInfo = this.props.user === null
             ? ( 
                 <div>
-                    <h2>Welcome API GitHub</h2>
+                    <h2>Using API GitHub with ReactJs</h2>
                 </div>
             )
             : (
