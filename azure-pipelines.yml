@@ -17,5 +17,5 @@ steps:
 
 - script: |
     npm install
-    grunt build --gruntfile Gruntfile.js
+    grunt --gruntfile gruntfile.js
   displayName: 'npm install and run grunt'
