@@ -27,12 +27,12 @@ steps:
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: '$(Build.BuildId).zip'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)\ArtifactsToBePublished'
 
- - task: CopyFiles@2
-   inputs:
-     SourceFolder: '$(Build.ArtifactStagingDirectory)'
-     Contents: '$(Build.BuildId).zip'
-     TargetFolder: '$(Build.ArtifactStagingDirectory)\ArtifactsToBePublished'
 
 
 - task: PublishBuildArtifacts@1
