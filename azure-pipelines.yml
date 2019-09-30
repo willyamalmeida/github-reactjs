@@ -19,3 +19,25 @@ steps:
     npm install --force
     npm build
   displayName: 'npm install and run grunt'
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+
+ - task: CopyFiles@2
+   inputs:
+     SourceFolder: '$(Build.ArtifactStagingDirectory)'
+     Contents: '$(Build.BuildId).zip'
+     TargetFolder: '$(Build.ArtifactStagingDirectory)\ArtifactsToBePublished'
+
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)\ArtifactsToBePublished'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
