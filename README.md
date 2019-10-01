@@ -1,12 +1,8 @@
 # Introduction 
-API GitHub
+Using API GitHub
 
-# Build Status and VSTS
 <span>
-    <img src="https://willyamalmeida.visualstudio.com/_apis/public/build/definitions/b338f7d5-bec3-4069-a268-6a4e428a914e/8/badge" />
-    <a href="https://willyamalmeida.visualstudio.com/Github/_build/index?definitionId=8">
-        Build
-    </a>
+    <img src="https://willyamalmeida.visualstudio.com/Github/_apis/build/status/willyamalmeida.github-reactjs?branchName=master" />    
 </span>
 
 # Getting Started
@@ -39,6 +35,3 @@ docker rm {id-container}
 
 4. Remove image
 docker rmi img-github-reactjs
-
-# Contribute
-**Willyam Almeida**
