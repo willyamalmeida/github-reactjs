@@ -12,11 +12,11 @@ console.log('Ambiente: ' + process.env.NODE_ENV);
 const WebpackDevServer = require( 'webpack-dev-server');
 const config = require('./webpack.config');
 const webpack = require('webpack');
-const appInsights = require('./appInsights');
+//const appInsights = require('./appInsights');
 
 const compiler = webpack(config);
 
-appInsights.init(config);
+//appInsights.init(config);
 
 const server = new WebpackDevServer(compiler, config.devServer);
 
